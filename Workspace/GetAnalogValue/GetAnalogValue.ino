@@ -17,5 +17,12 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
-
+  int sensorValue = analogRead(A0);
+  float voltage = sensorValue * (5.0 / 1023.0);
+  float percentage = map(sensorValue, 0, 1023, 0, 100);
+  Serial.println(sensorValue);
+  Serial.println(voltage);
+  Serial.println(percentage);
+  delay(2000);
+  
 }
